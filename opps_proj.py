@@ -13,7 +13,11 @@ class checkbook:
         2.Press 2 to signin" \
         3.Press 3 to write a post" \
         4.Press 4 to message a friend" \
-        5.Press anyother key to exit""")
+        5.Press anyother key to exit
+        
+        
+        
+        -->""")
 
 
         if user_input=="1":
@@ -21,9 +25,9 @@ class checkbook:
         elif user_input=="2":
             self.signin()
         elif user_input=="3":
-            pass
+            self.my_post()
         elif user_input=="4":
-            pass
+            self.sendmsg()
         else:
             exit()
 
@@ -53,5 +57,33 @@ class checkbook:
         self.menu()
 
 
-obj=checkbook()
+    def my_post(self):
+        if self.loggedin==True:
+            txt=input("Enter you message here-->")
+            print(f"following content has been posted-->{txt}")
+        else:
+            print("you need to signin first to post something...")
+        print("\n")
+
+        self.menu()
+
+
+    def sendmsg(self):
+        if self.loggedin==True:
+            txt=input("Enter your message here -->")
+            frnd=input("whom to send the message?-->")
+
+            print(f"your message send to {frnd}")
+        else:
+            print("you need to signin first to post something...")
+
+            print("\n")
+
+            self.menu()
+
+
+
+
+
+user15=checkbook()
 

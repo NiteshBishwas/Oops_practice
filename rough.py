@@ -6,9 +6,6 @@ my_int=155
 # print(type(my_str))
 
 
-lst.clear()
-print(lst)
+from opps_proj import checkbook
 
-a=2
-b=3
-print(a+b)
+user1=checkbook()
