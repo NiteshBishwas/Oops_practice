@@ -2,7 +2,7 @@
 class employee:
     def __init__(self):
         print("started executing attributes/data")
-        self.id=124
+        self.user_id=124
         self.salary=50000
         self.designation = "SDE"
         print("attributes/data have been initiated")

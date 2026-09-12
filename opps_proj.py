@@ -1,9 +1,37 @@
 class checkbook:
+
+    __user_id=0
+
+
+
     def __init__(self):
+        self.__name='Default User'
+        self.id=checkbook.__user_id
+        checkbook.__user_id+=1
+        self.__name="Default User"
         self.username=''
         self.password=''
         self.loggedin=False
-        self.menu()
+        self.running=True
+        # self.menu()
+
+    @staticmethod
+    def get_id():
+        return checkbook.__user_id
+
+    @staticmethod
+    def set_id(val):
+        checkbook.__user_id=val
+        return checkbook.__user_id
+
+    def get_name(self):
+        return self.__name
+
+
+    def set_name(self,value):
+        self.__name=value
+
+
 
 
 
@@ -13,11 +41,7 @@ class checkbook:
         2.Press 2 to signin" \
         3.Press 3 to write a post" \
         4.Press 4 to message a friend" \
-        5.Press anyother key to exit
-        
-        
-        
-        -->""")
+        5.Press anyother key to exit -->""")
 
 
         if user_input=="1":
@@ -29,7 +53,8 @@ class checkbook:
         elif user_input=="4":
             self.sendmsg()
         else:
-            exit()
+            print("Goodbye!")
+            self.running = False
 
     def signup(self):
         email=input("Enter your email here->")
@@ -38,7 +63,7 @@ class checkbook:
         self.password=pwd
         print("You have signed up successfully!!")
         print("\n")
-        self.menu()
+      
 
 
     def signin(self):
@@ -54,7 +79,6 @@ class checkbook:
                 print("Please input correct credentials...")
 
         print("\n")
-        self.menu()
 
 
     def my_post(self):
@@ -65,7 +89,6 @@ class checkbook:
             print("you need to signin first to post something...")
         print("\n")
 
-        self.menu()
 
 
     def sendmsg(self):
@@ -79,7 +102,6 @@ class checkbook:
 
             print("\n")
 
-            self.menu()
 
 
 
